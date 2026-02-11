@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE CENTER | NHL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Trung tâm cập nhật và tải xuống toàn bộ iPA và APK Chính thức | Admin Nlan.">
+    <link rel="icon" href="https://i.imgur.com/nWhyHvV.png" />
+
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+
+                url("https://i.imgur.com/gqOuGMF.gif") center/cover no-repeat;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .app {
+            width: 100%;
+            max-width: 520px;
+            padding: 18px 14px 32px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 25px rgba(196, 196, 196, 0.45);
+            overflow: hidden;
+
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+        }
+
+
+
+        .title-wrap {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: .3px;
+        }
+
+        .subtitle {
+            margin-top: 9px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .35px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(90deg, #facc15, #fde047);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle::before {
+            content: "|";
+            font-weight: 800;
+            background: linear-gradient(90deg, #fde047, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .subtitle {
+                font-size: 11.5px;
+            }
+        }
+
+        .lang {
+            position: fixed;
+            top: 10px;
+            /* chỉnh vị trí trên */
+            right: 20px;
+            /* sát phải */
+            z-index: 999;
+
+            cursor: pointer;
+            font-size: 13px;
+            padding: 7px 14px;
+            border-radius: 22px;
+
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, .14),
+                    rgba(255, 255, 255, .04));
+
+            backdrop-filter: blur(10px);
+
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, .12),
+                0 6px 20px rgba(0, 0, 0, .35);
+
+            transition: .25s ease;
+        }
+
+
+        .section-header {
+            margin: 6px 4px 16px;
+            text-align: left;
+        }
+
+
+
+        .section-header h3 {
+            position: relative;
+            margin-top: 5px;
+            padding-left: 14px;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: .4px;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #15ebfa, #4753fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header h3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 70%;
+            border-radius: 6px;
+            background: linear-gradient(180deg,
+                    #15ebfa,
+                    #00eeff);
+            box-shadow: 0 0 12px rgba(250, 204, 21, .55);
+        }
+
+        .section-header p {
+            font-size: 13px;
+            font-weight: 450;
+            line-height: 1.5;
+            color: #e5e7eb;
+            opacity: .9;
+            padding-left: 14px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg,
+                    rgba(0, 0, 0, 0.438),
+                    rgba(0, 0, 0, 0.411));
+
+            border-radius: 20px;
+            padding: 16px;
+            backdrop-filter: blur(16px);
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, .12),
+                0 6px 24px rgba(0, 0, 0, 0.836);
+            margin-top: 70px;
+        }
+
+        .item {
+
+            display: flex;
+            gap: 14px;
+            padding: 16px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border: 1px solid rgba(167, 139, 250, 0.212);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+
+        }
+
+
+        .item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .45);
+        }
+
+        .item-content {
+            flex: 1
+        }
+
+        .item-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .item-title h3 {
+            font-size: 16px;
+            font-weight: 650;
+        }
+
+        /* BADGE */
+        .badge {
+            font-size: 11px;
+            padding: 4px 9px;
+            border-radius: 20px;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .safe {
+            background: linear-gradient(135deg,
+                    rgba(38, 214, 155, 0.35),
+                    rgba(16, 185, 129, .15));
+            color: #34d399;
+            border: 1px solid rgba(52, 211, 153, .45);
+        }
+
+        .item-content p {
+            font-size: 12.7px;
+            line-height: 1.45;
+            color: #e5e7eb;
+        }
+
+        /* BUTTON */
+        .item-btn a {
+            background: linear-gradient(125deg, #069abe, #0787a7);
+            color: #fff;
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 8px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 0 7px rgba(20, 117, 106, 0.822);
+            transition: .25s;
+            display: flex;
+            align-items: center;
+        }
+
+        .item-btn a:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 15px rgba(19, 190, 170, 0.76);
+        }
+
+
+
+        .footer {
+            margin-top: 28px;
+            margin-bottom: 10px;
+            padding: 22px 18px 20px;
+            border-radius: 22px;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0),
+                    rgba(255, 255, 255, 0));
+            backdrop-filter: blur(16px);
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, .08),
+                0 20px 50px rgba(0, 0, 0, .55);
+            justify-content: start;
+        }
+
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
+            gap: 8px;
+            max-width: 320px;
+            margin: 0;
+            justify-content: start;
+        }
+
+        .contact a {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact a img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            padding: 6px;
+            background: rgba(255, 255, 255, .12);
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, .45),
+                inset 0 0 0 1px rgba(255, 255, 255, .15);
+            transition: .35s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .contact a::after {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(96, 165, 250, .45), transparent 65%);
+            opacity: 0;
+            transition: .35s;
+            filter: blur(8px);
+        }
+
+        .contact a:hover img {
+            transform: translateY(-6px) scale(1.15) rotate(6deg);
+        }
+
+        .contact a:hover::after {
+            opacity: 1;
+        }
+
+        .copy {
+            margin-top: 16px;
+            font-size: 12px;
+            letter-spacing: .3px;
+            color: #cbd5f5;
+            opacity: .85;
+        }
+
+        @media (min-width:768px) {
+            .footer {
+                padding: 26px 24px 22px;
+            }
+
+            .contact {
+                max-width: 380px;
+            }
+        }
+
+        .contact a {
+            position: relative;
+        }
+
+        .contact a::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 115%;
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+            padding: 6px 12px;
+            font-size: 11.5px;
+            font-weight: 600;
+            white-space: nowrap;
+            color: #fff;
+            border-radius: 999px;
+            background:
+                linear-gradient(135deg, rgba(96, 165, 250, .9), rgba(168, 85, 247, .9));
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, .45),
+                inset 0 0 0 1px rgba(255, 255, 255, .35);
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .contact a::after {
+            content: "";
+            position: absolute;
+            bottom: 108%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            rotate: 45deg;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .contact a:hover::before,
+        .contact a:hover::after {
+            opacity: 1;
+        }
+
+        .contact a:hover::before {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .download-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .65);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .download-box {
+            width: 100%;
+            max-width: 360px;
+            background: linear-gradient(180deg,
+                    rgba(30, 30, 30, .95),
+                    rgba(10, 10, 10, .95));
+            border-radius: 20px;
+            padding: 16px;
+            animation: zoomIn .25s ease;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .75);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(.88);
+                opacity: 0
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+
+        .download-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .download-header span {
+            font-weight: 800;
+            font-size: 15.5px;
+        }
+
+        .download-header button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 1.2;
+            cursor: pointer;
+        }
+
+        .download-body .note {
+            font-size: 12.5px;
+            color: #fde047;
+            letter-spacing: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .note a {
+            color: #14b8a6;
+            font-weight: 800;
+            text-decoration: none;
+            transition: .2s ease;
+        }
+
+        .note a:hover {
+            text-decoration: underline;
+            opacity: .8;
+        }
+
+        .download-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, .08);
+            padding: 10px;
+            border-radius: 14px;
+        }
+
+        .download-link img {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+        }
+
+        .download-link input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #34d399;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .download-actions {
+            display: flex;
+            gap: 12px;
+            margin: 14px 0;
+        }
+
+        .download-actions button,
+        .download-actions a {
+            flex: 1;
+            padding: 9px;
+            border-radius: 12px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .download-actions button {
+            background: rgba(255, 255, 255, .14);
+            color: #fff;
+            border: none;
+        }
+
+        .download-actions a {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+            color: #fff;
+        }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 260px;
+            left: 50%;
+            transform: translateX(-50%) translateY(30px);
+            background: linear-gradient(135deg,
+                    rgba(20, 20, 20, .95),
+                    rgba(8, 8, 8, .9));
+            color: #34d399;
+            padding: 16px 22px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 800;
+            opacity: 0;
+            pointer-events: none;
+            backdrop-filter: blur(16px);
+            box-shadow:
+                0 18px 45px rgba(0, 0, 0, .6),
+                inset 0 0 0 1px rgba(255, 255, 255, .08);
+            transition: .35s cubic-bezier(.4, 0, .2, 1);
+            z-index: 1000;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .preload {
+            opacity: 0;
+            transform: translateY(24px) scale(.98);
+        }
+
+        .loaded .preload {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition: .8s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .delay-1 {
+            transition-delay: .1s
+        }
+
+        .delay-2 {
+            transition-delay: .25s
+        }
+
+        .delay-3 {
+            transition-delay: .4s
+        }
+
+        .delay-4 {
+            transition-delay: .55s
+        }
+
+        .delay-5 {
+            transition-delay: .7s
+        }
+
+        .item {
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .loaded .item {
+            opacity: 1;
+            transform: translateY(0);
+            transition: .6s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .loaded .item:nth-child(1) {
+            transition-delay: .15s
+        }
+
+        .loaded .item:nth-child(2) {
+            transition-delay: .25s
+        }
+
+        .loaded .item:nth-child(3) {
+            transition-delay: .35s
+        }
+
+        .loaded .item:nth-child(4) {
+            transition-delay: .45s
+        }
+
+        .loaded .item:nth-child(5) {
+            transition-delay: .55s
+        }
+
+        .loaded .item:nth-child(6) {
+            transition-delay: .65s
+        }
+
+        .png {
+            position: absolute;
+            top: 250px;
+            width: 70px;
+            z-index: 4;
+
+            filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.452)) drop-shadow(0 0 7px rgba(255, 255, 255, 0.404)) drop-shadow(0 0 45px rgba(0, 255, 255, .6));
+
+            animation: swing 3s ease-in-out infinite;
+        }
+
+
+        .png.right {
+            right: 8px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes swing {
+            0% {
+                transform: rotate(-6deg);
+            }
+
+            50% {
+                transform: rotate(6deg);
+            }
+
+            100% {
+                transform: rotate(-6deg);
+            }
+        }
+
+        @media(max-width:480px) {
+
+
+            .png {
+                width: 64px;
+            }
+        }
+
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 190px;
+            margin: 36px 0 22px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, .14),
+                    rgba(255, 255, 255, .04));
+            backdrop-filter: blur(16px);
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, .12),
+                0 14px 40px rgba(0, 0, 0, .55);
+        }
+
+        .hero-slider .slides {
+            display: flex;
+            height: 100%;
+            transition: transform .7s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .hero-slider img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.9) contrast(1.05);
+        }
+
+        .hero-slider .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0, 0, 0, .45);
+            color: #c4c4c4;
+            font-size: 18px;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+            transition: .25s;
+        }
+
+        .hero-slider .nav:hover {
+            background: rgba(99, 99, 99, 0.45);
+            color: #c4c4c4;
+        }
+
+        .hero-slider .prev {
+            left: 10px
+        }
+
+        .hero-slider .next {
+            right: 10px
+        }
+
+        .hero-slider .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .hero-slider .dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .35);
+            transition: .3s;
+        }
+
+        .hero-slider .dots span.active {
+            width: 18px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #47f7fd, #1571fa);
+        }
+
+        /* Mobile */
+        @media(max-width:480px) {
+            .hero-slider {
+                height: 170px
+            }
+        }
+
+        .notification-list {
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border: 1px solid rgba(167, 139, 250, 0.212);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+        }
+
+        .notify-item {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border: 1px solid rgba(167, 139, 250, 0.212);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+            border-radius: 16px;
+            padding: 14px 14px 10px;
+            margin-bottom: 14px;
+
+        }
+
+        .notify-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            min-height: 44px;
+
+        }
+
+        .notify-left {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 10px;
+
+            min-height: 44px;
+        }
+
+        .notify-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #28ff70;
+            box-shadow: 0 0 12px rgba(52, 211, 153, .8);
+            min-width: 10px;
+
+            align-self: center;
+        }
+
+        .notify-head h4 {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 18px;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .notify-toggle {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-radius: 10px;
+
+            color: #fde047;
+            font-size: 20px;
+            cursor: pointer;
+
+            line-height: 1;
+            transform: translateY(-1px);
+
+
+            transition: transform .4s cubic-bezier(.4, 0, .2, 1),
+                color .2s ease,
+                background .2s ease;
+        }
+
+
+        .notify-toggle:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .notify-toggle i {
+            font-size: 14px;
+        }
+
+        .notify-body {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-6px);
+            transition:
+                max-height .6s cubic-bezier(.4, 0, .2, 1),
+                opacity .4s ease,
+                transform .4s ease;
+        }
+
+        .notify-body p {
+            font-size: 12.8px;
+            line-height: 1.55;
+            color: #e5e7eb;
+            padding-top: 10px;
+            white-space: pre-line;
+        }
+
+        .notify-item.active .notify-body {
+            max-height: 260px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .notify-item.active .notify-toggle {
+            transform: rotate(90deg);
+            color: #34d399;
+        }
+
+        .music-control {
+            position: fixed;
+            bottom: 18px;
+            right: 18px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(56, 189, 248, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+            transition: all .3s ease;
+        }
+
+        .music-control:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.9);
+        }
+
+        .music-control.playing {
+            animation: pulse 1.6s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 12px rgba(56, 189, 248, .6);
+            }
+
+            50% {
+                box-shadow: 0 0 28px rgba(56, 189, 248, 1);
+            }
+
+            100% {
+                box-shadow: 0 0 12px rgba(56, 189, 248, .6);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp .8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://i.imgur.com/uy7DZaf.png" class="png right preload delay-1">
+    <div id="music-control" class="music-control preload delay-5">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="Kings and Queens.mp3" type="audio/mpeg">
+    </audio>
+    <div class="app">
+        <div class="header preload delay-1">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="https://i.imgur.com/nWhyHvV.png" alt="Logo">
+                </div>
+                <div class="title-wrap">
+                    <h1 id="title">CENTER DOWNLOAD</h1>
+                    <p class="subtitle">UPDATE iPA & APK NEWEST</p>
+                </div>
+
+                <div class="lang" onclick="toggleLang()" data-vi="VN / EN" data-en="EN / VN">VN / EN</div>
+            </div>
+        </div>
+
+        <div class="hero-slider preload delay-2">
+            <div class="slides">
+                <img src="https://i.imgur.com/w8BafVX.jpeg">
+                <img src="https://i.imgur.com/uSAeoAJ.png">
+                <img src="https://i.imgur.com/404YdBu.jpeg">
+                <img src="https://i.imgur.com/jVlQB9E.jpeg">
+                <img src="https://i.imgur.com/yudzdwc.jpeg">
+                <img src="https://i.imgur.com/RITdBwH.jpeg">
+            </div>
+
+            <button class="nav prev">❮</button>
+            <button class="nav next">❯</button>
+
+            <div class="dots"></div>
+        </div>
+
+        <div class="card preload delay-2 fade-up">
+
+            <div class="item" style="margin-top: 10px;">
+
+                <img src="https://i.imgur.com/OYAyrBF.png">
+
+                <div class="item-content">
+                    <div class="item-title">
+                        <h3 data-vi="iPA Fluorite" data-en="iPA Fluorite">
+                            iPA Fluorite
+                        </h3>
+                        <span class="badge safe" data-vi="An toàn" data-en="Safe">
+                            An toàn
+                        </span>
+                    </div>
+
+                    <p data-vi="Fluorite Update bản chính thức." data-en=" Menu Fluorite Official Update">
+
+                    </p>
+                </div>
+
+                <div class="item-btn">
+                    <a href="#" data-vi="Tải Ngay" data-en="Download">
+                        Tải Ngay
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://i.imgur.com/OYAyrBF.png">
+
+                <div class="item-content">
+                    <div class="item-title">
+                        <h3 data-vi="iPA Aimkill" data-en="iPA Aimkill">
+                            iPA Aimkill
+                        </h3>
+                        <span class="badge safe" data-vi="An toàn" data-en="Safe">
+                            An toàn
+                        </span>
+                    </div>
+
+                    <p data-vi="Menu iOSCheat Update bản chính thức." data-en="Menui OSCheat Official Update.">
+
+                    </p>
+                </div>
+
+                <div class="item-btn">
+                    <a href="#" data-vi="Tải Ngay" data-en="Download">
+                        Tải Ngay
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.imgur.com/OYAyrBF.png">
+
+                <div class="item-content">
+                    <div class="item-title">
+                        <h3 data-vi="iPA Migul" data-en="iPA Migul">
+                            iPA Migul
+                        </h3>
+                        <span class="badge safe" data-vi="An toàn" data-en="Safe">
+                            An toàn
+                        </span>
+                    </div>
+
+                    <p data-vi="Menu Migul Update bản chính thức." data-en="Menu Migul Official Update.">
+
+                    </p>
+                </div>
+
+                <div class="item-btn">
+                    <a href="#" data-vi="Tải Ngay" data-en="Download">
+                        Tải Ngay
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://i.imgur.com/OYAyrBF.png">
+
+                <div class="item-content">
+                    <div class="item-title">
+                        <h3 data-vi="Migul Tipa" data-en="Migul Tipa">
+                            Migul Tipa
+                        </h3>
+                        <span class="badge safe" data-vi="An toàn" data-en="Safe">
+                            An toàn
+                        </span>
+                    </div>
+
+                    <p data-vi="Menu Migul Update bản chính thức." data-en="Menu Migul Official Update.">
+
+                    </p>
+                </div>
+
+                <div class="item-btn">
+                    <a href="#" data-vi="Tải Ngay" data-en="Download">
+                        Tải Ngay
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://i.imgur.com/XRa8Uq7.png ">
+
+                <div class="item-content">
+                    <div class="item-title">
+                        <h3 data-vi="APK Tối Ưu" data-en="Optimize APK">
+                            APK Tối Ưu
+                        </h3>
+
+                        <span class="badge safe" data-vi="An toàn" data-en="Safe">
+                            An toàn
+                        </span>
+                    </div>
+
+                    <p data-vi="Tối ưu cải thiện Ram, Cpu, tăng Fps." data-en="Optimize RAM, CPU, and increase FPS.">
+
+                    </p>
+                </div>
+
+                <div class="item-btn">
+                    <a href="#" data-vi="Tải Ngay" data-en="Download">
+                        Tải Ngay
+                    </a>
+                </div>
+            </div>
+            <div class="download-modal" id="downloadModal">
+                <div class="download-box">
+                    <div class="download-header">
+                        <span id="modalTitle">Link tải</span>
+                        <button onclick="closeDownload()">✕</button>
+                    </div>
+                    <div class="download-body">
+                        <p class="note">
+                            <b>
+                                Mua Key Menu Vui Lòng Truy Cập :
+                                <a href="https://nlanshop.io.vn" target="_blank"
+                                    style="font-size: 13px; letter-spacing: 1.2;" rel="noopener noreferrer">
+                                    Nlanshop.io.vn
+                                </a>
+                            </b>
+                            <br>
+                        </p>
+                        <div class="download-link">
+                            <img id="modalImg">
+                            <input type="text" id="modalLink" readonly>
+                        </div>
+                        <div class="download-actions">
+                            <button onclick="copyLink()">Copy</button>
+                            <a id="openLink" target="_blank" rel="noopener">Mở link <i
+                                    style="margin-left: 5px; font-size: 13px;"
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <small>Bấm Copy để sao chép hoặc Mở link để tải ngay.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="copy-toast" id="copyToast">Đã copy link thành công!</div>
+            <div class="card preload delay-4 notification-list">
+                <div class="notify-item">
+                    <div class="notify-head">
+                        <div class="notify-left">
+                            <span class="notify-dot"></span>
+                            <h4 data-vi="Thông Báo Cập Nhật" data-en="Update Notification">
+                                Thông Báo Cập Nhật
+                            </h4>
+                        </div>
+                        <button class="notify-toggle">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="notify-body">
+                        <p data-vi="Toàn Bộ iPA & APK Sẽ được cập nhật thường xuyên nhằm cải thiện và các sửa lỗi gặp phải trong quá trình sử dụng như: Lỗi loading, văng app, Fix Band. Update Bypass Antiband.
+                        
+                       Trang Web Cập Nhật Bao Gồm :
+• Menu Fluorite.
+• Menu Migul Lite, Pro.
+• Menu Aimkill (iOSCheat)
+• Menu Tối Ưu Android." data-en="All iPA & APK will be regularly updated to improve and fix errors encountered during use, such as: loading errors, app crashes, Band fixes. Update Bypass Antiband.
+The Updated Website Includes:
+• Fluorite Menu.
+• Migul Lite, Pro Menu.
+• Aimkill Menu (iOSCheat)
+• Android Optimization Menu.">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer preload delay-4">
+                <div class="section-header inside preload delay-4">
+                    <h3 data-vi="THÔNG TIN LIÊN HỆ" data-en="CONTACT INFOR">
+                        THÔNG TIN LIÊN HỆ
+                    </h3>
+
+                </div>
+                <div class="contact">
+
+                    <a href="https://www.facebook.com/nlan.h4x" data-tooltip="Facebook">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+                    </a>
+                    <a href="https://zalo.me/0971553617" data-tooltip="Zalo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg">
+                    </a>
+                    <a href="https://m.me/nlan.h4x" data-tooltip="Messenger">
+                        <img src="https://i.imgur.com/9ZDpK5q.png">
+                    </a>
+
+                    <a href="https://t.me/nlancheat" data-tooltip="Telegram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+                    </a>
+
+                    <a href="#" data-tooltip="+84 971553617">
+                        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
+                    </a>
+                </div>
+
+                <div class="copy">
+                    © 2026 Nlan • All Rights Reserved
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            window.addEventListener("load", () => {
+                document.body.classList.add("loaded");
+            });
+            console.log("Status Hack loaded");
+            let currentLang = "vi";
+
+            function toggleLang() {
+                currentLang = currentLang === "vi" ? "en" : "vi";
+
+                document.querySelectorAll("[data-vi]").forEach(el => {
+                    if (el.tagName === "INPUT") return;
+                    if (el.dataset[currentLang]) {
+                        if (el.innerHTML.includes("<")) {
+                            el.innerHTML = el.dataset[currentLang];
+                        } else {
+                            el.textContent = el.dataset[currentLang];
+                        }
+                    }
+                });
+            }
+
+            toggleLang(); toggleLang();
+
+
+            const downloadData = [
+                {
+                    img: "https://i.imgur.com/AscS7FO.png",
+                    title: "iPA Fluorite",
+                    link: "https://www.mediafire.com/file/88zoe08gtgc9wfx/FF_1.120.1_1.7.1.ipa/file"
+                },
+                {
+                    img: "https://i.imgur.com/AscS7FO.png",
+                    title: "iPA Aimkill",
+                    link: "https://www.mediafire.com/file/lz1djh3z3w12kz7/Free_Fire_Aimkill_1770720059.ipa/file"
+                },
+                {
+                    img: "https://i.imgur.com/AscS7FO.png",
+                    title: "iPA Migul",
+                    link: "https://www.mediafire.com/file/pkkxag88la340ul/Free_Fire_1.120.1_1769563323.ipa/file"
+                },
+                {
+                    img: "https://i.imgur.com/AscS7FO.png",
+                    title: "Migul Tipa",
+                    link: "https://www.mediafire.com/file/fojw219ma16pmr7/Monite_1.1.6_version.tipa/file"
+                },
+                {
+                    img: "https://i.imgur.com/AscS7FO.png",
+                    title: "APK Tối Ưu",
+                    link: "http://corexcheat.site/download/NlanMenu.apk"
+                }
+            ];
+            document.querySelectorAll(".item-btn a").forEach((btn, index) => {
+                btn.onclick = e => {
+                    e.preventDefault();
+                    const data = downloadData[index];
+                    modalImg.src = data.img;
+                    modalTitle.textContent = data.title[currentLang];
+                    modalLink.value = data.link;
+                    openLink.href = data.link;
+                    downloadModal.style.display = "flex";
+                };
+            });
+            function closeDownload() {
+                downloadModal.style.display = "none";
+            }
+            function copyLink() {
+                navigator.clipboard.writeText(modalLink.value);
+                showToast(
+                    currentLang === "vi"
+                        ? "Đã copy link thành công!"
+                        : "Link copied successfully!"
+                );
+            }
+            function showToast(text) {
+                copyToast.textContent = text;
+                copyToast.classList.add("show");
+                clearTimeout(copyToast.timer);
+                copyToast.timer = setTimeout(() => {
+                    copyToast.classList.remove("show");
+                }, 1800);
+            }
+            const slider = document.querySelector(".hero-slider");
+            const slides = slider.querySelector(".slides");
+            const imgs = slider.querySelectorAll("img");
+            const prev = slider.querySelector(".prev");
+            const next = slider.querySelector(".next");
+            const dotsBox = slider.querySelector(".dots");
+            let index = 0;
+            let auto;
+            imgs.forEach((_, i) => {
+                const dot = document.createElement("span");
+                if (i === 0) dot.classList.add("active");
+                dot.onclick = () => goSlide(i);
+                dotsBox.appendChild(dot);
+            });
+            const dots = dotsBox.querySelectorAll("span");
+            function updateDots() {
+                dots.forEach(d => d.classList.remove("active"));
+                dots[index].classList.add("active");
+            }
+            function goSlide(i) {
+                index = (i + imgs.length) % imgs.length;
+                slides.style.transform = `translateX(${-index * 100}%)`;
+                updateDots();
+            }
+            prev.onclick = () => { goSlide(index - 1); resetAuto(); }
+            next.onclick = () => { goSlide(index + 1); resetAuto(); }
+            function startAuto() {
+                auto = setInterval(() => goSlide(index + 1), 5000);
+            }
+            function resetAuto() {
+                clearInterval(auto); startAuto();
+            }
+            startAuto();
+            let startX = 0;
+            slides.addEventListener("touchstart", e => {
+                startX = e.touches[0].clientX;
+            });
+            slides.addEventListener("touchend", e => {
+                let diff = e.changedTouches[0].clientX - startX;
+                if (Math.abs(diff) > 50) {
+                    diff > 0 ? goSlide(index - 1) : goSlide(index + 1);
+                    resetAuto();
+                }
+            });
+
+            document.querySelectorAll(".notify-head").forEach(head => {
+                head.onclick = () => {
+                    const item = head.parentElement;
+                    const isOpen = item.classList.contains("active");
+
+                    document.querySelectorAll(".notify-item").forEach(i => {
+                        i.classList.remove("active");
+                    });
+
+                    if (!isOpen) {
+                        item.classList.add("active");
+                        item.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest"
+                        });
+                    }
+                };
+            });
+            const music = document.getElementById('bg-music');
+            const musicBtn = document.getElementById('music-control');
+            let isPlaying = false;
+            music.volume = 0.35;
+            function toggleMusic() {
+                if (!isPlaying) {
+                    music.play().then(() => {
+                        isPlaying = true;
+                        musicBtn.classList.add('playing');
+                        musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    }).catch(() => { });
+                } else {
+                    music.pause();
+                    isPlaying = false;
+                    musicBtn.classList.remove('playing');
+                    musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+                }
+            }
+            musicBtn.addEventListener('click', toggleMusic);
+            document.addEventListener('click', function autoPlayOnce() {
+                if (!isPlaying) toggleMusic();
+                document.removeEventListener('click', autoPlayOnce);
+            }, { once: true });
+
+            document.addEventListener('touchstart', function autoPlayOnceMobile() {
+                if (!isPlaying) toggleMusic();
+                document.removeEventListener('touchstart', autoPlayOnceMobile);
+            }, { once: true });
+        </script>
+</body>
+
+</html>
